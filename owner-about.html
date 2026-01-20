@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | XCorrupted-EntitysX</title>
+    <style>
+        @font-face {
+            font-family: 'IBM Plex Mono';
+            src: url('IBMPlexMono-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+        }
+        
+        :root {
+            --header-gradient-start: #2a1a4d;
+            --header-gradient-end: #1a0f33;
+            --header-text: #e4d4ff;
+            --header-subtitle: #c9b3ff;
+            --header-border: #7d3cff;
+            
+            --main-bg: #1a0f33;
+            --main-border: #7d3cff;
+            --main-shadow: rgba(125, 60, 255, 0.3);
+            
+            --heading-color: #a370ff;
+            --text-muted: #b8a0d4;
+            
+            --card-bg: #2a1a4d;
+            --card-border: #7d3cff;
+            --card-hover-bg: #3d2666;
+            --card-hover-border: #9d5cff;
+            --card-hover-shadow: rgba(125, 60, 255, 0.5);
+            
+            --link-color: #7d3cff;
+            --link-hover: #9d5cff;
+            --link-glow: #7d3cff;
+            
+            --divider: #7d3cff;
+            
+            --footer-gradient-start: #120a26;
+            --footer-gradient-end: #1a0f33;
+            --footer-text: #b8a0d4;
+            --footer-border: #7d3cff;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'IBM Plex Mono', monospace;
+            background-color: #000000;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to bottom, var(--header-gradient-start), var(--header-gradient-end));
+            color: var(--header-text);
+            padding: 35px 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--header-border);
+            box-shadow: 0 0 8px var(--header-border);
+        }
+        
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+        }
+        
+        header p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--header-subtitle);
+            font-weight: normal;
+        }
+        
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px 30px;
+            background-color: var(--main-bg);
+            border: 1px solid var(--main-border);
+            border-radius: 8px;
+            box-shadow: 0 0 10px var(--main-shadow);
+        }
+        
+        h2 {
+            color: var(--heading-color);
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--divider);
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: var(--heading-color);
+            font-size: 1.2rem;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        h4 {
+            color: var(--header-subtitle);
+            font-size: 1.05rem;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .intro-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 5px;
+        }
+        
+        .info-card {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .info-card:hover {
+            background-color: var(--card-hover-bg);
+            border-color: var(--card-hover-border);
+            box-shadow: 0 0 12px var(--card-hover-shadow);
+        }
+        
+        p {
+            font-size: 1.05rem;
+            margin: 15px 0;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        ul li:before {
+            content: "▸";
+            color: var(--link-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: 0.2s ease;
+            font-weight: bold;
+        }
+        
+        a:hover {
+            color: var(--link-hover);
+            text-shadow: 0 0 6px var(--link-glow);
+        }
+        
+        hr {
+            margin: 40px 0;
+            border: 0;
+            border-top: 1px solid var(--divider);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background-color: var(--card-hover-bg);
+            border-color: var(--card-hover-border);
+            box-shadow: 0 0 12px var(--card-hover-shadow);
+            transform: translateX(-5px);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: var(--footer-text);
+            font-size: 0.9rem;
+            background: linear-gradient(to top, var(--footer-gradient-start), var(--footer-gradient-end));
+            border-top: 1px solid var(--footer-border);
+            box-shadow: 0 0 8px var(--footer-border);
+        }
+        
+        footer p {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hello, I am XCorrupted_EntitysX / PureMilitaryWater</h1>
+        <p>About Me</p>
+    </header>
+    
+    <main>
+        <div class="intro-section">
+            <h2>Introduction</h2>
+            <p>Hello, my name is Brenton, though I'm known online as XCorrupted_EntitysX or PureMilitaryWater. Welcome to my corner of the internet where I share my passions for retro technology, animatronics, and creative projects.</p>
+        </div>
+        
+		<hr>
+		
+        <div class="info-card">
+            <h3>Roblox Communities I'm Currently In</h3>
+            <ul>
+                <li>Orange's (NEW) USMC - Vice Chairman of the Joint Chiefs of Stff - Co-Founder</li>
+                <li>Showbiz Time Theater Inc. - Founder, Company President, and Owner</li>
+            </ul>
+        </div>
+		
+        <div class="info-card">
+            <h3>Roblox Communities I Have Been In</h3>
+            
+            <h4>Disbanded Groups:</h4>
+            <ul>
+                <li>The Galadrost Empire - Imperator</li>
+                <li>PlixLeader's United States Army - Chairman of Joint Chiefs of Staff</li>
+                <li>Orange's (OLD) USMC - General, Marine Corps Intelligence Activity, Commanding General</li>
+                <li>KallXZ's USMC - Sergeant Major, Military Police, Provost Sergeant Major</li>
+            </ul>
+			
+            <h4>Former Groups:</h4>
+            <ul>
+                <li>The Royal Canadian Army RP - Military Police, Line Duty Officer 2, Sergeant</li>
+                <li>Kilo_Captain's United States Armed Forces - Marine Corps, Second Lieutenant, Military Police, Platoon Commander (1 PLT, A CO, 1LEB)</li>
+                <li>WW2 Military Roleplay - Navy, Petty Officer First Class, Naval Task Group 50, [DesRon] Gunner's Mate</li>
+            </ul>
+        </div>
+        
+		<hr>
+		
+        <div class="info-card">
+            <h3>Interests & Hobbies</h3>
+            <p>I occasionally play VR games with my Quest 2 via Steam Link, which provides an immersive gaming experience.</p>
+            
+            <p>My favorite color is a specific shade of purple with the hex code <strong style="color: #511177;">#511177</strong>.</p>
+            
+            <p>Some of my favorite bands include Molchat Doma and Twenty One Pilots, though I also enjoy a lot of older music from various eras.</p>
+            
+            <p>I'm particularly fascinated by animatronics from Creative Engineering Inc. and Chuck E. Cheese, as well as old pneumatic animatronics in general. The mechanical artistry behind these creations is remarkable.</p>
+        </div>
+		
+        <div class="info-card">
+            <h3>High Priority Projects</h3>
+            <ul>
+                <li>Finding a development team for Showbiz Time Theater Inc.</li>
+                <li>Building a few short and simple horror games</li>
+            </ul>
+        </div>
+        
+        <hr>
+		
+        <div class="info-card">
+            <h3>Goals & Things I Want to Get</h3>
+            <ul>
+                <li>Dell Precision 7560 Xeon W-11955M with an RTX A5000 running Linux Mint</li>
+                <li>Custom built gaming pc with a Ryzen 7 9800X3D and RTX 4090 running CachyOS</li>
+                <li>Upcoming Steam Frame VR headset</li>
+                <li>An old IBM laptop (either a WorkPad or ThinkPad) and install Windows 2000 Professional SP4</li>
+                <li>Save up the money to buy a pneumatic animatronic or build one from scratch</li>
+                <li>A 1980s Panasonic boombox, tape deck, and cassette tapes</li>
+                <li>To be more active on my YouTube channel</li>
+            </ul>
+        </div>
+
+        
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </main>
+    
+    <footer>
+        <p>This site is a work in progress. More content will be added soon.</p>
+        <p>Contact us at <a href="mailto:administrator@xcorrupted-entitysx.com">administrator@xcorrupted-entitysx.com</a> for questions or concerns.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Index | XCorrupted-EntitysX</title>
+    <style>
+        @font-face {
+            font-family: 'IBM Plex Mono';
+            src: url('IBMPlexMono-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'IBM Plex Mono', monospace;
+            background-color: #000000;
+            color: #e5e5e5;
+            line-height: 1.6;
+        }
+        /* Header with gradient */
+        header {
+            background: linear-gradient(to bottom, #0a0a0a, #171717);
+            color: #ffffff;
+            padding: 35px 40px;
+            text-align: center;
+            border-bottom: 2px solid #cccccc;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+        }
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+        }
+        header p {
+            margin: 0;
+            font-size: 1rem;
+            color: #b5b5b5;
+            font-weight: normal;
+        }
+        /* Main content container */
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px 30px;
+            background-color: #050505;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
+        }
+        h2 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #cccccc;
+            padding-bottom: 10px;
+        }
+        .nav-section {
+            margin-bottom: 30px;
+        }
+        .nav-link {
+            display: block;
+            padding: 15px 20px;
+            margin: 10px 0;
+            background-color: #000000;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            background-color: #0f0f0f;
+            border-color: #ffffff;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+            transform: translateX(5px);
+        }
+        .nav-link h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+        }
+        .nav-link p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #aaaaaa;
+        }
+        p {
+            font-size: 1.05rem;
+        }
+        /* Link styling */
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: 0.2s ease;
+        }
+        a:hover {
+            color: #bbbbbb;
+            text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+        }
+        /* Divider line */
+        hr {
+            margin: 40px 0;
+            border: 0;
+            border-top: 1px solid #cccccc;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #aaaaaa;
+            font-size: 0.9rem;
+            background: linear-gradient(to top, #171717, #0a0a0a);
+            border-top: 1px solid #cccccc;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+        }
+        footer p {
+            margin: 8px 0;
+        }
+        
+        /* Konami Code Modal */
+        #konami-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #000000;
+            border: 3px solid #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            z-index: 1000;
+            text-align: center;
+            max-width: 500px;
+        }
+        
+        #konami-message h2 {
+            color: #ffffff;
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border: none;
+            padding: 0;
+        }
+        
+        #konami-message p {
+            color: #e5e5e5;
+            font-size: 1.2rem;
+            margin: 15px 0;
+        }
+        
+        #konami-message button {
+            margin: 10px 5px;
+            padding: 12px 25px;
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        #konami-message button:hover {
+            background-color: #cccccc;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+        
+        #konami-message button.close-btn {
+            background-color: #999999;
+            color: #000000;
+        }
+        
+        #konami-message button.close-btn:hover {
+            background-color: #777777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Site Index</h1>
+        <p>Your central hub for navigating all pages and related links within this domain</p>
+        <p>I'm currently in the process of editing pages. Some pages may not be available currently.</p>
+    </header>
+    <main>
+        <h2>XCorrupted_EntitysX - Site Owner</h2>
+        <div class="nav-section">
+            <a href="owner-main.html" class="nav-link">
+                <h3>Main Page</h3>
+                <p>Start your journey here with the homepage</p>
+            </a>
+            
+            <a href="owner-about.html" class="nav-link">
+                <h3>About Me</h3>
+                <p>Learn more about the creator and the story behind this site</p>
+            </a>
+            
+            <a href="owner-portfolio.html" class="nav-link">
+                <h3>Portfolio</h3>
+                <p>View a curated collection of work and achievements</p>
+            </a>
+            
+            <a href="owner-projects.html" class="nav-link">
+                <h3>Projects</h3>
+                <p>Explore current works in progress and completed creations</p>
+            </a>
+        </div>
+
+        <h2>Shizuko - Site Admin</h2>
+        <div class="nav-section">
+            <a href="shizuko-about.html" class="nav-link">
+                <h3>About Me</h3>
+                <p>Learn about Shizuko</p>
+            </a>
+        </div>
+
+        <h2>Showbiz Time Theater Inc.</h2>
+        <div class="nav-section">
+            <a href="stt-main.html" class="nav-link">
+                <h3>STT Main Page</h3>
+                <p>Visit our roleplay group and join the creative community</p>
+            </a>
+            
+            <a href="stt-about.html" class="nav-link">
+                <h3>About STT</h3>
+                <p>Learn about the theater group, its history, and mission</p>
+            </a>
+            
+            <a href="stt-characters.html" class="nav-link">
+                <h3>Character Details</h3>
+                <p>Explore detailed information about all STT characters</p>
+            </a>
+        </div>
+        
+        <p style="text-align: center; color: #666666;">More sections and features coming soon. Check back regularly for updates!</p>
+    </main>
+    
+    <!-- Konami Code Easter Egg Modal -->
+    <div id="konami-message">
+        <h2>🎮 KONAMI CODE ACTIVATED! 🎮</h2>
+        <p>You've unlocked the secret gamer path!</p>
+        <p style="font-size: 1rem; color: #4a4a4a;">Congratulations on finding this easter egg!</p>
+        <button onclick="window.location.href='you-are-such-a-snigma-boy.html'">Enter Secret Page</button>
+        <button class="close-btn" onclick="document.getElementById('konami-message').style.display='none'">Close</button>
+    </div>
+    
+    <footer>
+        <p>This site is a work in progress. More content will be added soon.</p>
+        <p>Contact us at <a href="mailto:administrator@xcorrupted-entitysx.com">administrator@xcorrupted-entitysx.com</a> for questions or concerns.</p>
+    </footer>
+    
+    <script>
+        // Konami Code Easter Egg
+        let konamiCode = [];
+        const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        
+        document.addEventListener('keydown', function(e) {
+            konamiCode.push(e.key);
+            konamiCode = konamiCode.slice(-10);
+            
+            if (konamiCode.join('').toLowerCase() === konamiSequence.join('').toLowerCase()) {
+                document.getElementById('konami-message').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
+

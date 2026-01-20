@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | XCorrupted-EntitysX</title>
+    <style>
+        @font-face {
+            font-family: 'IBM Plex Mono';
+            src: url('IBMPlexMono-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+        }
+        
+        :root {
+            --header-gradient-start: #1a4d2e;
+            --header-gradient-end: #0f331f;
+            --header-text: #d4ffe4;
+            --header-subtitle: #b3ffd4;
+            
+            --main-bg: #0f331f;
+            --main-border: #3cff7d;
+            --main-shadow: rgba(60, 255, 125, 0.3);
+            
+            --heading-color: #70ffa3;
+            --text-muted: #a0d4b8;
+            
+            --card-bg: #1a4d2e;
+            --card-border: #3cff7d;
+            --card-hover-bg: #26664d;
+            --card-hover-border: #5cff9d;
+            --card-hover-shadow: rgba(60, 255, 125, 0.5);
+            
+            --link-color: #3cff7d;
+            --link-hover: #5cff9d;
+            --link-glow: #3cff7d;
+            
+            --divider: #3cff7d;
+            
+            --footer-gradient-start: #0a261a;
+            --footer-gradient-end: #0f331f;
+            --footer-text: #a0d4b8;
+            --footer-border: #3cff7d;
+            
+            --status-complete: #2ecc71;
+            --status-progress: #f39c12;
+            --status-planned: #3498db;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'IBM Plex Mono', monospace;
+            background-color: #000000;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to bottom, var(--header-gradient-start), var(--header-gradient-end));
+            color: var(--header-text);
+            padding: 35px 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--main-border);
+            box-shadow: 0 0 8px var(--main-border);
+        }
+        
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+        }
+        
+        header p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--header-subtitle);
+            font-weight: normal;
+        }
+        
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px 30px;
+            background-color: var(--main-bg);
+            border: 1px solid var(--main-border);
+            border-radius: 8px;
+            box-shadow: 0 0 10px var(--main-shadow);
+        }
+        
+        h2 {
+            color: var(--heading-color);
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--divider);
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: var(--heading-color);
+            font-size: 1.2rem;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .intro-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 5px;
+        }
+        
+        .info-card {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .info-card:hover {
+            background-color: var(--card-hover-bg);
+            border-color: var(--card-hover-border);
+            box-shadow: 0 0 12px var(--card-hover-shadow);
+        }
+        
+        .project-item {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: rgba(26, 77, 46, 0.5);
+            border-left: 4px solid var(--card-border);
+            border-radius: 3px;
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .project-title {
+            color: var(--heading-color);
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .status-complete {
+            background-color: var(--status-complete);
+            color: #000;
+        }
+        
+        .status-progress {
+            background-color: var(--status-progress);
+            color: #000;
+        }
+        
+        .status-planned {
+            background-color: var(--status-planned);
+            color: #fff;
+        }
+        
+        .project-description {
+            color: var(--text-muted);
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        
+        .project-tech {
+            color: var(--link-color);
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+        
+        p {
+            font-size: 1.05rem;
+            margin: 15px 0;
+        }
+        
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: 0.2s ease;
+            font-weight: bold;
+        }
+        
+        a:hover {
+            color: var(--link-hover);
+            text-shadow: 0 0 6px var(--link-glow);
+        }
+        
+        hr {
+            margin: 40px 0;
+            border: 0;
+            border-top: 1px solid var(--divider);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background-color: var(--card-hover-bg);
+            border-color: var(--card-hover-border);
+            box-shadow: 0 0 12px var(--card-hover-shadow);
+            transform: translateX(-5px);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: var(--footer-text);
+            font-size: 0.9rem;
+            background: linear-gradient(to top, var(--footer-gradient-start), var(--footer-gradient-end));
+            border-top: 1px solid var(--footer-border);
+            box-shadow: 0 0 8px var(--footer-border);
+        }
+        
+        footer p {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Projects</h1>
+        <p>Past, Present & Future</p>
+    </header>
+    
+    <main>
+        <div class="intro-section">
+            <h2>Project Overview</h2>
+            <p>Here you'll find a collection of projects I've completed, am currently working on, and plan to develop in the future. From game development to animatronic builds, vintage tech experiments, and more.</p>
+        </div>
+        
+        <div class="info-card">
+            <h3>🛠️ In Progress</h3>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">TEXT BLOCK.</div>
+                    <span class="status-badge status-progress">TEXT BLOCK.</span>
+                </div>
+                <div class="project-description">
+                    TEXT BLOCK.
+                </div>
+                <div class="project-tech">TEXT BLOCK.</div>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">TEXT BLOCK.</div>
+                    <span class="status-badge status-progress">TEXT BLOCK.</span>
+                </div>
+                <div class="project-description">
+                    TEXT BLOCK.
+                </div>
+                <div class="project-tech">TEXT BLOCK.</div>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">TEXT BLOCK.</div>
+                    <span class="status-badge status-progress">TEXT BLOCK.</span>
+                </div>
+                <div class="project-description">
+                    TEXT BLOCK.
+                </div>
+                <div class="project-tech">TEXT BLOCK.</div>
+            </div>
+        </div>
+        
+        <div class="info-card">
+            <h3>✅ Completed</h3>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">TEXT BLOCK.</div>
+                    <span class="status-badge status-complete">TEXT BLOCK.</span>
+                </div>
+                <div class="project-description">
+                    TEXT BLOCK.
+                </div>
+                <div class="project-tech">TEXT BLOCK.</div>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">TEXT BLOCK.</div>
+                    <span class="status-badge status-complete">TEXT BLOCK.</span>
+                </div>
+                <div class="project-description">
+                    TEXT BLOCK.
+                </div>
+                <div class="project-tech">TEXT BLOCK.</div>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">TEXT BLOCK.</div>
+                    <span class="status-badge status-complete">TEXT BLOCK.</span>
+                </div>
+                <div class="project-description">
+                    TEXT BLOCK.
+                </div>
+                <div class="project-tech">TEXT BLOCK.</div>
+            </div>
+        </div>
+        
+        <div class="info-card">
+            <h3>📋 Planned</h3>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">TEXT BLOCK.</div>
+                    <span class="status-badge status-planned">TEXT BLOCK.</span>
+                </div>
+                <div class="project-description">
+                    TEXT BLOCK.
+                </div>
+                <div class="project-tech">TEXT BLOCK.</div>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">TEXT BLOCK.</div>
+                    <span class="status-badge status-planned">TEXT BLOCK.</span>
+                </div>
+                <div class="project-description">
+                    TEXT BLOCK.
+                </div>
+                <div class="project-tech">TEXT BLOCK.</div>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">TEXT BLOCK.</div>
+                    <span class="status-badge status-planned">TEXT BLOCK.</span>
+                </div>
+                <div class="project-description">
+                    TEXT BLOCK.
+                </div>
+                <div class="project-tech">TEXT BLOCK.</div>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">TEXT BLOCK.</div>
+                    <span class="status-badge status-planned">TEXT BLOCK.</span>
+                </div>
+                <div class="project-description">
+                    TEXT BLOCK.
+                </div>
+                <div class="project-tech">TEXT BLOCK.</div>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">TEXT BLOCK.</div>
+                    <span class="status-badge status-planned">TEXT BLOCK.</span>
+                </div>
+                <div class="project-description">
+                    TEXT BLOCK.
+                </div>
+                <div class="project-tech">TEXT BLOCK.</div>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <div class="info-card">
+            <h3>💡 Future Ideas</h3>
+            <p>Additional concepts and ideas currently in the brainstorming phase. These may evolve into full projects as I develop them further.</p>
+        </div>
+        
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </main>
+    
+    <footer>
+        <p>This site is a work in progress. More content will be added soon.</p>
+        <p>Contact us at <a href="mailto:administrator@xcorrupted-entitysx.com">administrator@xcorrupted-entitysx.com</a> for questions or concerns.</p>
+    </footer>
+</body>
+</html>
